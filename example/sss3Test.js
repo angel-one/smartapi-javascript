@@ -17,22 +17,47 @@ let smart_api = new SmartAPI({
 		// return smart_api.getProfile();
 
 	
-			 smart_api.placeOrder({
-			    "variety": "NORMAL",
-			    "tradingsymbol": "SBIN-EQ",
-			    "symboltoken": "304",
-			    "transactiontype": "BUY",
-			    "exchange": "NSE",
-			    "ordertype": "LIMIT",
-			    "producttype": "INTRADAY",
-			    "duration": "DAY",
-			    "price": "195",
-			    "squareoff": "0",
-			    "stoploss": "0",
-			    "quantity": "1"
-			}).then((data)=>{
-                console.log("placeOrder:::",data);
-            }).catch((error)=>{
-                console.log("error:::",error);
-            })
-        // })
+			//  smart_api.placeOrder({
+			//     "variety": "NORMAL",
+			//     "tradingsymbol": "SBIN-EQ",
+			//     "symboltoken": "304",
+			//     "transactiontype": "BUY",
+			//     "exchange": "NSE",
+			//     "ordertype": "LIMIT",
+			//     "producttype": "INTRADAY",
+			//     "duration": "DAY",
+			//     "price": "195",
+			//     "squareoff": "0",
+			//     "stoploss": "0",
+			//     "quantity": "1"
+			// }).then((data)=>{
+            //     console.log("placeOrder:::",data);
+            // }).catch((error)=>{
+            //     console.log("error:::",error);
+            // })
+
+			//  smart_api.modifyOrder({
+			//     "orderid": "201130000006424",
+			//     "variety": "NORMAL",
+			//     "tradingsymbol": "SBIN-EQ",
+			//     "symboltoken": "3045",
+			//     "transactiontype": "BUY",
+			//     "exchange": "NSE",
+			//     "ordertype": "LIMIT",
+			//     "producttype": "INTRADAY",
+			//     "duration": "DAY",
+			//     "price": "19500",
+			//     "squareoff": "0",
+			//     "stoploss": "0",
+			//     "quantity": "1"
+			// }).then((data)=>{
+            //     console.log("modifyOrder:::",data);
+            // }).catch((error)=>{
+            //     console.log("error:::",error);
+            // })
+
+			// smart_api.getOrderBook().then((data)=>{
+            //     console.log("res:::",data);
+            // }).catch((error)=>{
+            //     console.log("error:::",error);
+            // })
