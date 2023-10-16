@@ -1,17 +1,17 @@
 let { SmartAPI, WebSocketClient, WebSocketV2 } = require('../lib');
 
 let smart_api = new SmartAPI({
-	api_key: 'smartapi_key', // PROVIDE YOUR API KEY HERE
-	// OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor
-	// access_token: "YOUR_ACCESS_TOKEN",
-	// refresh_token: "YOUR_REFRESH_TOKEN"
+  api_key: "", // PROVIDE YOUR API KEY HERE
+  // OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor
+  access_token: 'eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6IkE1MjE2MzEzNCIsInJvbGVzIjowLCJ1c2VydHlwZSI6IlVTRVIiLCJ0b2tlbiI6ImV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUp6ZFdJaU9pSkJOVEl4TmpNeE16UWlMQ0psZUhBaU9qRTJPVGMxTXpFeE16QXNJbWxoZENJNk1UWTVOelF6TWpjMU5pd2lhblJwSWpvaU9Ea3pZMlUxWldVdFltRTNOQzAwT1RRd0xXRmhabUV0TnpJeVpHUmxPVFprWXpSbUlpd2liMjF1WlcxaGJtRm5aWEpwWkNJNk9Dd2ljMjkxY21ObGFXUWlPaUl6SWl3aWRYTmxjbDkwZVhCbElqb2lZMnhwWlc1MElpd2lkRzlyWlc1ZmRIbHdaU0k2SW5SeVlXUmxYMkZqWTJWemMxOTBiMnRsYmlJc0ltZHRYMmxrSWpvNExDSnpiM1Z5WTJVaU9pSXpJbjAuRzlxSnl1ZmxxVTdkM1JNckhGRzRkdXVaV3FJSHZPLTBmRkxpQmFCR0V1bm5SeDFsMWt0QktZWlpwczY2RzBNWVFwOXIxdWlWa0V6R05fZkctVWlJZXciLCJBUEktS0VZIjoiVkcyczM0Q3EiLCJpYXQiOjE2OTc0MzI4MTYsImV4cCI6MTY5NzUzMTEzMH0.cNBTyw40c0eW_ZyXi4Dh4ZZ5MVDykbWrsEXaBzercNl2JjNwD0hpU5I_7Y42uDsCP6StZX-MfMU6yNw5BSrNTg',
+  refresh_token: 'eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbiI6IlJFRlJFU0gtVE9LRU4iLCJSRUZSRVNILVRPS0VOIjoiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnpkV0lpT2lKQk5USXhOak14TXpRaUxDSmxlSEFpT2pFMk9UYzBOell3TVRZc0ltbGhkQ0k2TVRZNU56UXpNamMxTml3aWFuUnBJam9pWVdKbU5tVmhNMll0TnprelpDMDBObU0xTFRneFlUVXRZMlUxT1Rjell6azVOV1V6SWl3aWRHOXJaVzRpT2lKU1JVWlNSVk5JTFZSUFMwVk9JaXdpZFhObGNsOTBlWEJsSWpvaVkyeHBaVzUwSWl3aWRHOXJaVzVmZEhsd1pTSTZJblJ5WVdSbFgzSmxabkpsYzJoZmRHOXJaVzRpZlEuTTRYb1dkTHVnS043YnJFSW1TZXMwc190X29DNTF1amdmc1NmbUFpOU5SRTVkYXNBUDVTUWhkejN1VHdEaGtyakVDWXZxTHFhTTBiMzBYN3BHMnNaX1EiLCJpYXQiOjE2OTc0MzI4MTZ9.wiFmh17e52K7YZbWaX4JD949RRDVd3C76gZ7C3RBpmygIN164jbpC0N1tHEWn_QLh4Fk8bQfAeSGRT1pTjxJag',
 });
 
 // // If user does not have valid access token and refresh token then use generateSession method
 
 // }
 // smart_api
-// 	.generateSession('CLIENT_CODE', 'PASSWORD', 'TOTP')
+// 	.generateSession('A52163134', '4321', '919073')
 // 	.then((data) => {
 // 		console.log(data);
 // 		return smart_api.getProfile();
@@ -64,10 +64,17 @@ let smart_api = new SmartAPI({
 				// 	console.log(data);
 				// })
 
-// 		// 	// return smart_api.getTradeBook();
+			// return smart_api.getTradeBook();
 
 // 		// 	// Portfolio Methods
-// 		// 	// return smart_api.getHolding();
+			smart_api
+        .getHolding()
+        .then((data) => {
+          console.log("Success: ", data);
+        })
+        .catch((err) => {
+          console.log("Error:", err);
+        });
 
 // 		// 	// return smart_api.getPosition();
 
@@ -139,12 +146,12 @@ let smart_api = new SmartAPI({
    		// 		});
 
 		// search Scrip Methods
-		smart_api.searchScrip({
-					"exchange": "BSE", 
-					"searchscrip":"Titan"
-				}).then((data)=>{
-					console.log(data);
-				})
+		// smart_api.searchScrip({
+		// 			"exchange": "BSE", 
+		// 			"searchscrip":"Titan"
+		// 		}).then((data)=>{
+		// 			console.log(data);
+		// 		})
 
 		// get all holding method
 		// smart_api.getAllHolding().then((data)=>{
