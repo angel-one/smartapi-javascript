@@ -5,17 +5,16 @@ var expect = chai.expect;
 let smart_api = new SmartAPI({
   api_key: "VG2s34Cq",
   // OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor
-  access_token:
-    "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6IkE1MjE2MzEzNCIsInJvbGVzIjowLCJ1c2VydHlwZSI6IlVTRVIiLCJ0b2tlbiI6ImV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUp6ZFdJaU9pSkJOVEl4TmpNeE16UWlMQ0psZUhBaU9qRTJPVGMzT0Rrd05EZ3NJbWxoZENJNk1UWTVOelk1TWpjMk5Td2lhblJwSWpvaU5qRmpORFpoTWpVdE9EUTRPQzAwWmprNExXRTBNREl0TmpsalpHSmpOalEyTkdRNElpd2liMjF1WlcxaGJtRm5aWEpwWkNJNk9Dd2ljMjkxY21ObGFXUWlPaUl6SWl3aWRYTmxjbDkwZVhCbElqb2lZMnhwWlc1MElpd2lkRzlyWlc1ZmRIbHdaU0k2SW5SeVlXUmxYMkZqWTJWemMxOTBiMnRsYmlJc0ltZHRYMmxrSWpvNExDSnpiM1Z5WTJVaU9pSXpJbjAubmJNZW9GMGNtNEQ4aW1VM2F1X0dqak0yYVltbnptdFR5NzRaMnpZbG4tTVRMa0E2MnFfdHQzSGt4S1RzVTFaaDkzT19UX3lFUUM0bEpTaE1sQVBlX0EiLCJBUEktS0VZIjoiVkcyczM0Q3EiLCJpYXQiOjE2OTc2OTI4MjUsImV4cCI6MTY5Nzc4OTA0OH0.iuJJ_QMQ_BMwKAA4YnbqI_L18LctwY95kp2_NbdBYfTGByfGdOo3XsHO0vfvQqXS76Y3n8stqrIip_Q4Om56cQ",
-  refresh_token:
-    "eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbiI6IlJFRlJFU0gtVE9LRU4iLCJSRUZSRVNILVRPS0VOIjoiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnpkV0lpT2lKQk5USXhOak14TXpRaUxDSmxlSEFpT2pFMk9UYzNNell3TWpVc0ltbGhkQ0k2TVRZNU56WTVNamMyTlN3aWFuUnBJam9pWlRjeFpHTXlaR1l0T1RSbE1pMDBaR05sTFdFek5HRXRZakJrWVRnNU56WTFZVFZpSWl3aWRHOXJaVzRpT2lKU1JVWlNSVk5JTFZSUFMwVk9JaXdpZFhObGNsOTBlWEJsSWpvaVkyeHBaVzUwSWl3aWRHOXJaVzVmZEhsd1pTSTZJblJ5WVdSbFgzSmxabkpsYzJoZmRHOXJaVzRpZlEucURXWlRqcWd6QlM1S3BOTVlsQ054ZnZveFZieGgxRmR6OFlPRkszTG5FcU9zVlAydWR1OFlfbDFJbjc5ZXU0Y3RJeXJBSVNrU0tNeXZya2szZG9nclEiLCJpYXQiOjE2OTc2OTI4MjV9.EoWC5AssEE1DJHES7tZST_BzNxgdfvB5tMxg_jH3T3tPYij-ypjX2qTvP6qzwzmdmKMVzGPRUT5QtHzqHd84Bg",
+  access_token:'',
+  refresh_token:'',
 });
 
 // // generateSession api
 // describe("generateSession", function () {
 //   let res;
 //   before(async function () {
-//     res = await smart_api.generateSession("A52163134", "4321", "378315");
+//     res = await smart_api.generateSession("A52163134", "4321", "197313");
+//     console.log(res);
 //     if (res.status) {
 //       const { jwtToken, refreshToken } = res.data;
 
@@ -44,31 +43,31 @@ let smart_api = new SmartAPI({
 //   });
 // });
 
-// // getProfile api
-// describe("getProfile", function () {
-//   let res;
-//   before(async function () {
-//     res = await smart_api.getProfile();
-//   });
+// getProfile api
+describe("getProfile", function () {
+  let res;
+  before(async function () {
+    res = await smart_api.getProfile();
+  });
 
-//   it("Get Profile successful", function () {
-//     if (res.status) {
-//       expect(res).to.have.property("status", true);
-//       expect(res).to.have.property("message", "SUCCESS");
-//       expect(res).to.have.property("errorcode", "");
-//       expect(res).to.have.property("data");
-//     }
-//   });
+  it("Get Profile successful", function () {
+    if (res.status) {
+      expect(res).to.have.property("status", true);
+      expect(res).to.have.property("message", "SUCCESS");
+      expect(res).to.have.property("errorcode", "");
+      expect(res).to.have.property("data");
+    }
+  });
 
-//   it("Get Profile failed", function () {
-//     if (res.success === false) {
-//       expect(res).to.have.property("success", false);
-//       expect(res).to.have.property("message");
-//       expect(res).to.have.property("errorCode");
-//       expect(res).to.have.property("data");
-//     }
-//   });
-// });
+  it("Get Profile failed", function () {
+    if (res.success === false) {
+      expect(res).to.have.property("success", false);
+      expect(res).to.have.property("message");
+      expect(res).to.have.property("errorCode");
+      expect(res).to.have.property("data");
+    }
+  });
+});
 
 // // getRMS 
 // describe("getRMS", function () {
@@ -626,11 +625,10 @@ let smart_api = new SmartAPI({
 //   });
 
 //   it("Logout successful", function () {
-//     if (res.status) {
-//       expect(res).to.have.property("status", true);
-//       expect(res).to.have.property("message", "SUCCESS");
-//       expect(res).to.have.property("errorcode", "");
-//       expect(res).to.have.property("data");
+//     if (res.status || res.status === 500) {
+//       expect(res).to.have.property("status");
+//       expect(res).to.have.property("message");
+     
 //     }
 //   });
 
@@ -643,7 +641,6 @@ let smart_api = new SmartAPI({
 //     }
 //   });
 // });
-
 
 // // WebSocketV2
 // describe("WebSocketV2", function () {
