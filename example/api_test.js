@@ -1,10 +1,10 @@
-let { SmartAPI, WebSocketClient, WebSocketV2 } = require('../lib');
+let { SmartAPI, WebSocketClient, WebSocketV2 } = require("../lib");
 
 let smart_api = new SmartAPI({
-	api_key: 'smartapi_key', // PROVIDE YOUR API KEY HERE
-	// OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor
-	// access_token: "YOUR_ACCESS_TOKEN",
-	// refresh_token: "YOUR_REFRESH_TOKEN"
+  api_key: "smartapi_key", // PROVIDE YOUR API KEY HERE
+  // OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor
+  // access_token: "YOUR_ACCESS_TOKEN",
+  // refresh_token: "YOUR_REFRESH_TOKEN"
 });
 
 // // If user does not have valid access token and refresh token then use generateSession method
@@ -60,9 +60,9 @@ let smart_api = new SmartAPI({
 
 // 		// 	// return smart_api.getOrderBook();
 
-				// smart_api.getOrderBook().then((data)=>{
-				// 	console.log(data);
-				// })
+// smart_api.getOrderBook().then((data)=>{
+// 	console.log(data);
+// })
 
 // 		// 	// return smart_api.getTradeBook();
 
@@ -124,27 +124,33 @@ let smart_api = new SmartAPI({
 // 		// 	//     "todate": "2021-02-10 09:20"
 // 		// 	// })
 
+// Market Data Methods
+// smart_api.marketData({
+// 			"mode": "FULL",
+// 			"exchangeTokens": {
+// 				"NSE": [
+// 					"3045"
+// 				]
+// 			}
+// 		}).then((data) => {
+// 			console.log(JSON.stringify(data, null, 2));
+// 	        //  console.log(JSON.stringify(data))
+// 		});
 
-		// Market Data Methods
-		// smart_api.marketData({
- 		// 			"mode": "FULL",
- 		// 			"exchangeTokens": {
- 		// 				"NSE": [
- 		// 					"3045"
- 		// 				]
- 		// 			}
-		// 		}).then((data) => {
-		// 			console.log(JSON.stringify(data, null, 2));
-		// 	        //  console.log(JSON.stringify(data))
-   		// 		});
+// search Scrip Methods
+smart_api
+  .searchScrip({
+    exchange: "BSE",
+    searchscrip: "Titan",
+  })
+  .then((data) => {
+    console.log(data);
+  });
 
-		// search Scrip Methods
-		smart_api.searchScrip({
-					"exchange": "BSE", 
-					"searchscrip":"Titan"
-				}).then((data)=>{
-					console.log(data);
-				})
+// get all holding method
+// smart_api.getAllHolding().then((data)=>{
+// 	console.log(data);
+// })
 // })
 // .then((data) => {
 // 	console.log('PROFILE::', data);
@@ -240,8 +246,8 @@ let smart_api = new SmartAPI({
 // 		console.log('receiveTick:::::', data);
 // 	}
 
-	// setTimeout(() => {
-	// 	web_socket.close();
-	// }, 10000);
+// setTimeout(() => {
+// 	web_socket.close();
+// }, 10000);
 // });
 // ########################### Socket V2 Sample Code End Here ###########################

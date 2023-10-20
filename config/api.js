@@ -29,7 +29,8 @@ module.exports.API = {
 
 	candle_data: '/rest/secure/angelbroking/historical/v1/getCandleData',
 	market_data : '/rest/secure/angelbroking/market/v1/quote',
-	search_scrip : '/rest/secure/angelbroking/order/v1/searchScrip'
+	search_scrip : '/rest/secure/angelbroking/order/v1/searchScrip',
+    get_all_holding : '/rest/secure/angelbroking/portfolio/v1/getAllHolding',
 	// "api.token": "/session/token",
 	// "api.token.invalidate": "/session/token",
 	// "api.token.renew": "/session/refresh_token",

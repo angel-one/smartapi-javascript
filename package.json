@@ -1,6 +1,6 @@
 {
 	"name": "smartapi-javascript",
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"description": "",
 	"main": "./lib/",
 	"scripts": {
@@ -17,6 +17,8 @@
 		"atob": "^2.1.2",
 		"axios": "^0.20.0",
 		"binary-parser": "^2.2.1",
+		"chai": "^4.3.10",
+		"mocha": "^10.2.0",
 		"pako": "^2.1.0",
 		"public-ip": "^4.0.2",
 		"querystring": "^0.2.0",
