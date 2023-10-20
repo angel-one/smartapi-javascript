@@ -3,17 +3,17 @@ var chai = require("chai");
 var expect = chai.expect;
 
 let smart_api = new SmartAPI({
-  api_key: "VG2s34Cq",
+  api_key: "smartapi_key",
   // OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor
-  access_token:'',
-  refresh_token:'',
+  access_token: "YOUR_ACCESS_TOKEN",
+  refresh_token: "YOUR_REFRESH_TOKEN",
 });
 
 // // generateSession api
 // describe("generateSession", function () {
 //   let res;
 //   before(async function () {
-//     res = await smart_api.generateSession("A52163134", "4321", "197313");
+//     res = await smart_api.generateSession('CLIENT_CODE', 'PASSWORD', 'TOTP');
 //     console.log(res);
 //     if (res.status) {
 //       const { jwtToken, refreshToken } = res.data;
@@ -649,12 +649,10 @@ describe("getProfile", function () {
 
 //   before(function () {
 //     web_socket = new WebSocketV2({
-//       jwttoken:
-//         "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6IkE1MjE2MzEzNCIsInJvbGVzIjowLCJ1c2VydHlwZSI6IlVTRVIiLCJ0b2tlbiI6ImV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUp6ZFdJaU9pSkJOVEl4TmpNeE16UWlMQ0psZUhBaU9qRTJPVGMzT0Rrd05EZ3NJbWxoZENJNk1UWTVOelk1TWpjMk5Td2lhblJwSWpvaU5qRmpORFpoTWpVdE9EUTRPQzAwWmprNExXRTBNREl0TmpsalpHSmpOalEyTkdRNElpd2liMjF1WlcxaGJtRm5aWEpwWkNJNk9Dd2ljMjkxY21ObGFXUWlPaUl6SWl3aWRYTmxjbDkwZVhCbElqb2lZMnhwWlc1MElpd2lkRzlyWlc1ZmRIbHdaU0k2SW5SeVlXUmxYMkZqWTJWemMxOTBiMnRsYmlJc0ltZHRYMmxrSWpvNExDSnpiM1Z5WTJVaU9pSXpJbjAubmJNZW9GMGNtNEQ4aW1VM2F1X0dqak0yYVltbnptdFR5NzRaMnpZbG4tTVRMa0E2MnFfdHQzSGt4S1RzVTFaaDkzT19UX3lFUUM0bEpTaE1sQVBlX0EiLCJBUEktS0VZIjoiVkcyczM0Q3EiLCJpYXQiOjE2OTc2OTI4MjUsImV4cCI6MTY5Nzc4OTA0OH0.iuJJ_QMQ_BMwKAA4YnbqI_L18LctwY95kp2_NbdBYfTGByfGdOo3XsHO0vfvQqXS76Y3n8stqrIip_Q4Om56cQ",
-//       apikey: "VG2s34Cq",
-//       clientcode: "A52163134",
-//       feedtype:
-//         "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6IkE1MjE2MzEzNCIsImlhdCI6MTY5NzY5MjgyNSwiZXhwIjoxNjk3Nzc5MjI1fQ.ZGmie7MDMi8QTUcA3IdUZ5qb-4ZAO3KM7FWg3AUAF8h0nj68X8UxrxtY-gqXtsicKjTXTizpqGYA6bAvsD4ioQ",
+//           clientcode: "CLIENT_CODE",
+//           jwttoken: 'JWT_TOKEN',
+//           apikey: "API_KEY",
+//           feedtype: "FEED_TYPE",
 //     });
 //   });
    
