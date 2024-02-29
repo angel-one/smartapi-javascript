@@ -1,0 +1,4 @@
+2024-02-29T09:37:02.988Z [ERROR] - error on response data - Request URL : /rest/secure/angelbroking/order/v1/placeOrder - Response Data: {"success":false,"message":"Invalid Token","errorCode":"AG8001","data":""}
+2024-02-29T10:12:09.025Z [ERROR] - error on response data - Request URL : /rest/secure/angelbroking/order/v1/cancelOrder - Response Data: {"success":false,"message":"Invalid Token","errorCode":"AG8001","data":""}
+2024-02-29T10:13:15.024Z [ERROR] - error on response data - Request URL : /rest/secure/angelbroking/order/v1/getOrderBook - Response Data: {"success":false,"message":"Invalid Token","errorCode":"AG8001","data":""}
+2024-02-29T10:13:15.168Z [ERROR] - error on response data - Request URL : /rest/secure/angelbroking/order/v1/searchScrip - Response Data: {"success":false,"message":"Invalid Token","errorCode":"AG8001","data":""}

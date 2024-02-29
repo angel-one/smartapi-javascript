@@ -1,11 +1,29 @@
 let { SmartAPI, WebSocketClient, WebSocketV2, WSOrderUpdates } = require('../lib');
 
 let smart_api = new SmartAPI({
-	api_key: 'smartapi_key', // PROVIDE YOUR API KEY HERE
+	api_key: 'playstore_key', // PROVIDE YOUR API KEY HERE
 	// OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor
-	// access_token: "YOUR_ACCESS_TOKEN",
-	// refresh_token: "YOUR_REFRESH_TOKEN"
+	access_token: "eyJhbGciOiJIUzUxMiJ9.eyJ1c2VybmFtZSI6IlM1MjQ1MjE2MyIsInJvbGVzIjowLCJ1c2VydHlwZSI6IlVTRVIiLCJ0b2tlbiI6ImV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUp6ZFdJaU9pSlROVEkwTlRJeE5qTWlMQ0psZUhBaU9qRTNNRGd4TnpFNU5qY3NJbWxoZENJNk1UY3dPREE0TWpJeE5pd2lhblJwSWpvaVkyVXhPVEkzWkdRdFpXSTVNeTAwWVdVeExUbGtOelF0WW1GaVpHSmtaalJpTVRZeUlpd2liMjF1WlcxaGJtRm5aWEpwWkNJNk9Dd2ljMjkxY21ObGFXUWlPaUl6SWl3aWRYTmxjbDkwZVhCbElqb2lZMnhwWlc1MElpd2lkRzlyWlc1ZmRIbHdaU0k2SW5SeVlXUmxYMkZqWTJWemMxOTBiMnRsYmlJc0ltZHRYMmxrSWpvNExDSnpiM1Z5WTJVaU9pSXpJaXdpWkdWMmFXTmxYMmxrSWpvaU5tUTBabVkzTlRjdE5Ea3lNeTB6Wm1SbExXSmpOell0T0RWa09HSmtaRE5rWWpZMElpd2lZV04wSWpwN2ZYMC5aNE5qWFVSZEU2bG1HTlRMdE5sam1LUWMwQnNFcWJBcDRzN2lMRXM1cXFNVVVZNkw3OG9kZVJWUDZqTzZxS2hiVUdNX2s3VDc0aWkyZC1oLTJPNVBnQSIsIkFQSS1LRVkiOiJwbGF5c3RvcmVfa2V5IiwiaWF0IjoxNzA4MDgyMjc2LCJleHAiOjE3MDgxNzE5Njd9.7U-2Y7VoaCEtYW-a1NwNODQiFD93VrHbPMzU-9k0s4TESz3TnoVaN9sBcNycdrtUOS4R9Q5O-cYLdzYnhL1bMQ",
+	refresh_token: "eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbiI6IlJFRlJFU0gtVE9LRU4iLCJSRUZSRVNILVRPS0VOIjoiZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnpkV0lpT2lKVE5USTBOVEl4TmpNaUxDSmxlSEFpT2pFM01EZ3hOamcyTnpZc0ltbGhkQ0k2TVRjd09EQTRNakl4Tml3aWFuUnBJam9pWTJSa1pqUmhPV1V0TlRNeE1pMDBZbUpqTFRsbFlUTXROR1U0TW1RellUQTBPR000SWl3aWIyMXVaVzFoYm1GblpYSnBaQ0k2TUN3aWRHOXJaVzRpT2lKU1JVWlNSVk5JTFZSUFMwVk9JaXdpZFhObGNsOTBlWEJsSWpvaVkyeHBaVzUwSWl3aWRHOXJaVzVmZEhsd1pTSTZJblJ5WVdSbFgzSmxabkpsYzJoZmRHOXJaVzRpTENKa1pYWnBZMlZmYVdRaU9pSTJaRFJtWmpjMU55MDBPVEl6TFRObVpHVXRZbU0zTmkwNE5XUTRZbVJrTTJSaU5qUWlMQ0poWTNRaU9udDlmUS5RRXNrOVpvVm5kd0xiQjdQbjNnZEFYS3VoMWFvSWpoVFhleFFuaTJBMDlDckNHUm44bWhJN2VmZGwyR3pWdDNSdTE5dURXWko5RVZEa3FPQUpmVjA3dyIsImlhdCI6MTcwODA4MjI3Nn0.ordoY20B67_aJVne-hbQP_DWJERcotKDNgT6fe5xxOeY_tM3kI5ffzVcV-frifrkE0ScWag-IlyADy6LICl_ag"
 });
+
+// Order Methods
+// return smart_api.placeOrder({
+// 	"variety": "NORMAL",
+// 	"tradingsymbol": "SBIN-EQ",
+// 	"symboltoken": "3045",
+// 	"transactiontype": "BUY",
+// 	"exchange": "NSE",
+// 	"ordertype": "LIMIT",
+// 	"producttype": "INTRADAY",
+// 	"duration": "DAY",
+// 	"price": "19500",
+// 	"squareoff": "0",
+// 	"stoploss": "0",
+// 	"quantity": "1"
+// }).then((data)=>{
+// 	console.log("place_order_data", data)
+// })
 
 // // If user does not have valid access token and refresh token then use generateSession method
 
@@ -53,16 +71,16 @@ let smart_api = new SmartAPI({
 // 		// 	//     "quantity": "1"
 // 		// 	// });
 
-// 		// 	// return smart_api.cancelOrder({
-// 		// 	//     "variety": "NORMAL",
-// 		// 	//     "orderid": "201130000006424"
-// 		// 	// });
+			// return smart_api.cancelOrder({
+			//     "variety": "NORMAL",
+			//     "orderid": "201130000006424"
+			// });
 
-// 		// 	// return smart_api.getOrderBook();
+		// 	// return smart_api.getOrderBook();
 
-				// smart_api.getOrderBook().then((data)=>{
-				// 	console.log(data);
-				// })
+				smart_api.getOrderBook().then((data)=>{
+					console.log(data);
+				})
 
 // 		// 	// return smart_api.getTradeBook();
 
