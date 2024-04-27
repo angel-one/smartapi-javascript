@@ -15,7 +15,7 @@
 	"dependencies": {
 		"address": "^1.1.2",
 		"atob": "^2.1.2",
-		"axios": "^1.6.8",
+		"axios": "^0.20.0",
 		"binary-parser": "^2.2.1",
 		"chai": "^4.3.10",
 		"mocha": "^10.2.0",
