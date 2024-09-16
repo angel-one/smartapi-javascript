@@ -150,7 +150,7 @@ function customSessionHook() {
 ## Getting started with SmartAPI Websocket's
 
 ```javascript
-########################### Socket Sample Code Starts Here ###########################
+########################### Socket Sample Code Starts Here #########################
 // Old websocket
 
 let web_socket = new WebSocket({
