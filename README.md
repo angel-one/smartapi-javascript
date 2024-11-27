@@ -10,17 +10,28 @@ npm i smartapi-javascript
 
 ```javascript
 let { SmartAPI, WebSocket,WebSocketV2 } = require('smartapi-javascript');
+const speakeasy = require('speakeasy');
+
+const api_key = 'smartapi_key';
+const totp_hash = 'totp';
+const client_code = 'client_code';
+const password = 'password';
 
 let smart_api = new SmartAPI({
-	api_key: 'smartapi_key', // PROVIDE YOUR API KEY HERE
+	api_key: api_key, // PROVIDE YOUR API KEY HERE
 	// OPTIONAL : If user has valid access token and refresh token then it can be directly passed to the constructor.
 	// access_token: "YOUR_ACCESS_TOKEN",
 	// refresh_token: "YOUR_REFRESH_TOKEN"
 });
 
+const totp = speakeasy.totp({
+    secret: totp_hash,
+    encoding: 'base32' // Ensure the secret is base32 encoded
+});
+
 // If user does not have valid access token and refresh token then use generateSession method
 smart_api
-	.generateSession('CLIENT_CODE', 'PASSWORD', 'TOTP')
+	.generateSession(client_code, password, totp)
 	.then((data) => {
 		return smart_api.getProfile();
 
